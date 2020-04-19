@@ -117,7 +117,7 @@ open class SideMenuController: UIViewController {
     private weak var contentContainerOverlay: UIView?
 
     // The pan gesture recognizer responsible for revealing and hiding side menu
-    private weak var panGestureRecognizer: UIPanGestureRecognizer?
+    public weak var panGestureRecognizer: UIPanGestureRecognizer?
 
     var shouldReverseDirection: Bool {
         guard preferences.basic.shouldRespectLanguageDirection else {
@@ -742,9 +742,9 @@ extension SideMenuController: UIGestureRecognizerDelegate {
             return false
         }
 
-        if isViewControllerInsideNavigationStack(for: touch.view) {
-            return false
-        }
+//         if isViewControllerInsideNavigationStack(for: touch.view) {
+//             return false
+//         }
 
         if touch.view is UISlider {
             return false
